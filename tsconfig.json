@@ -7,7 +7,7 @@
     "jsx": "react-jsx" /* JSX 코드 생성 지정 : 'preserve', 'react-native', 'react' or 'react-jsx'. */,
     "noEmit": true,
     "isolatedModules": true /* 각 파일을 별도의 모듈로 트랜스 파일허용 */,
-    "esModuleInterop": true /* 모듈간의 export,import 문법 허용 */,
+    "esModuleInterop": true /* 모듈간의 export, import 문법 허용 */,
     "strict": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true /* 동일파일 참조 허용하지않음 */,
