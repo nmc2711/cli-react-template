@@ -4,6 +4,7 @@
   "description": "빠른 개발 환경세팅을 위한 boilerplate",
   "main": "index.js",
   "scripts": {
+    "start": "webpack serve --config webpack/webpack.config.js --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "hwang sang han",
@@ -20,7 +21,9 @@
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
     "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.6",
     "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^3.0.0",
     "typescript": "^4.3.4",
     "webpack": "^5.40.0",
     "webpack-cli": "^4.7.2",

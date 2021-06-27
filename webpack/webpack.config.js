@@ -15,6 +15,7 @@ module.exports = {
         test: /\.(ts|js)x?$/,
         // *test 로더를 적용할 파일 유형 (일반적으로 정규 표현식 사용)
         exclude: /node_modules/,
+        // *exclude 제외할 파일이나 폴더명
         use: [
           {
             loader: "babel-loader",
@@ -38,8 +39,10 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "..", "./build"),
+    // *filename 웹팩으로 빌드한 파일의 이름
     filename: "bundle.js",
   },
+  mode: "development",
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "..", "./src/index.html"),
