@@ -16,4 +16,6 @@
 
 7. yarn add -D css-loader style-loader ... 비 자바스크립트 파일중 css/style을 컴파일하는 로더 설치
 
-8. declarion.d.ts 모듈에 대한 전역 타입 지정
+8. declarion.d.ts img/svg 모듈에 대한 전역 타입 지정
+
+9. webpack 컴파일러 단계별 분리 dev,pr,common // (build test) cd build npx serve 기대되는 프로덕트 파일 테스트가능

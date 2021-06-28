@@ -1,52 +1,14 @@
-const path = require("path");
-// *HtmlWebpackPlugin는 웹팩으로 빌드한 결과물로 HTML 파일을 생성해주는 플러그인
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { merge } = require("webpack-merge");
+// * merge 여러 개의 웹팩 설정 파일을 하나로 병합해주는 라이브러리리
+// 웹팩 머지를 효율적으로 사용하는 방법은 개발용과 배포용 설정 파일에서 공통으로 쓰이는 부분을 먼저 분리하는 것입니다.
+// 파일 체계는 common/dev/prod 구성하였다.
+const commonConfig = require("./webpack.common.js");
 
-module.exports = {
-  // *entry는 웹팩에서 웹 자원을 변환하기 위해 필요한 최초 진입점이자 자바스크립트 파일 경로
-  entry: path.resolve(__dirname, "..", "./src/index.tsx"),
-  resolve: {
-    extensions: [".tsx", ".ts", ".js"],
-  },
-  module: {
-    // *module 로더(Loader)는 웹팩이 웹 애플리케이션을 해석할 때 자바스크립트 파일이 아닌 웹 자원(HTML, CSS, Images, 폰트 등)들을 변환할 수 있도록 도와주는 속성
-    rules: [
-      {
-        test: /\.(ts|js)x?$/,
-        // *test 로더를 적용할 파일 유형 (일반적으로 정규 표현식 사용)
-        exclude: /node_modules/,
-        // *exclude 제외할 파일이나 폴더명
-        use: [
-          {
-            loader: "babel-loader",
-          },
-        ],
-        // *use 해당 파일에 적용할 로더의 이름
-      },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: "asset/resource",
-      },
-      {
-        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-        type: "asset/inline",
-      },
-    ],
-  },
-  output: {
-    path: path.resolve(__dirname, "..", "./build"),
-    // *filename 웹팩으로 빌드한 파일의 이름
-    filename: "bundle.js",
-  },
-  mode: "development",
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "..", "./src/index.html"),
-    }),
-  ],
-  stats: "errors-only",
+module.exports = (envVars) => {
+  const { env } = envVars;
+  const envConfig = require(`./webpack.${env}.js`);
+  // pk에서 env의 서치값으로 배포 로케이션 지정
+  const config = merge(commonConfig, envConfig);
+
+  return config;
 };
