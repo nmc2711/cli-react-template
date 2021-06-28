@@ -1,6 +1,7 @@
 import "./style.css";
 import BasicImg from "./basic-image.png";
 import LogoSvg from "./logo.svg";
+import { ClickCounter } from "./components/ClickCounter";
 
 export const App = () => {
   return (
@@ -12,6 +13,7 @@ export const App = () => {
       </h1>
       <img src={BasicImg} alt="기본 이미지" width="300" height="200" />
       <img src={LogoSvg} alt="SVG 기본 이미지" width="300" height="200" />
+      <ClickCounter />
     </>
   );
 };

@@ -19,3 +19,7 @@
 8. declarion.d.ts img/svg 모듈에 대한 전역 타입 지정
 
 9. webpack 컴파일러 단계별 분리 dev,pr,common // (build test) cd build npx serve 기대되는 프로덕트 파일 테스트가능 // prod 와 dev 의 번들파일크기 차이 확인가능
+
+10. yarn add -D @pmmmwh/react-refresh-webpack-plugin react-refresh ... 개발중인 프로덕트에 대한 코드동기변화에도 현재 react 스테이트 유지를 도와주는 helper
+
+11. yarn add -D eslint eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/parser @typescript-eslint/eslint-plugin
