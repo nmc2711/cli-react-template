@@ -18,4 +18,4 @@
 
 8. declarion.d.ts img/svg 모듈에 대한 전역 타입 지정
 
-9. webpack 컴파일러 단계별 분리 dev,pr,common // (build test) cd build npx serve 기대되는 프로덕트 파일 테스트가능
+9. webpack 컴파일러 단계별 분리 dev,pr,common // (build test) cd build npx serve 기대되는 프로덕트 파일 테스트가능 // prod 와 dev 의 번들파일크기 차이 확인가능
