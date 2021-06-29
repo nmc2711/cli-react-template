@@ -1,10 +1,13 @@
-import './style.css'
-import BasicImg from './basic-image.png'
-import LogoSvg from './logo.svg'
-import { ClickCounter } from './components/ClickCounter'
+import React, { useState } from 'react';
+
+import './style.css';
+import BasicImg from './basic-image.png';
+import LogoSvg from './logo.svg';
+import { ClickCounter } from './components/ClickCounter';
 
 export const App = () => {
-  let dd = 1
+  const [state, setState] = useState<number>(1);
+
   return (
     <>
       <h1>
@@ -16,5 +19,5 @@ export const App = () => {
       <img src={LogoSvg} alt="SVG 기본 이미지" width="300" height="200" />
       <ClickCounter />
     </>
-  )
-}
+  );
+};
