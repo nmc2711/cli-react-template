@@ -6,11 +6,12 @@ import LogoSvg from './logo.svg';
 import { ClickCounter } from './components/ClickCounter';
 
 export const App = () => {
-  const dd = "123";
+  const test = '123';
   return (
     <>
       <h1>
         Yes, React 타입스크립트 와 빠른 웹팩 개발환경 세팅을 위한 보일러플레이트
+        {test}
         <br />
         환경 - {process.env.NODE_ENV} {process.env.name}
       </h1>
