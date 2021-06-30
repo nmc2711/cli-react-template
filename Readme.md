@@ -28,3 +28,9 @@
     이것역시 필요한 옵션을 prettierrc를 작성해 커스터마이징 할수있다.
 
 13. 코드규칙에 대한 설정역시 pakage.json "lint", "format" 빌드명령어로 각각 eslint,prettier 모듈로 접근해 수정경로를 설정후 전체적인 검사 및 수정을 일괄적으로 할수있다.
+
+14. yarn add -D husky lint-staged 허스키와 lint-staged 사용하면 git hooks를 사용할수있다. 커밋전에 eslint 문법 체크를 통한 점검을 하며 코드정밀화에 도움을 준다.
+
+15. yarn add -D @babel/runtime @babel/plugin-transform-runtime
+
+16. yarn add -D webpack-bundle-analyzer
