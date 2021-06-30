@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import './style.css';
 import BasicImg from './basic-image.png';
@@ -6,8 +6,6 @@ import LogoSvg from './logo.svg';
 import { ClickCounter } from './components/ClickCounter';
 
 export const App = () => {
-  const [state, setState] = useState<number>(1);
-
   return (
     <>
       <h1>
