@@ -6,7 +6,7 @@ import LogoSvg from './logo.svg';
 import { ClickCounter } from './components/ClickCounter';
 
 export const App = () => {
-  const dd = '123';
+  const dd = "123";
   return (
     <>
       <h1>
