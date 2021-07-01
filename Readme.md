@@ -2,7 +2,7 @@
 
 #### Author : FeDev.황상한
 
-### 모듈설치에 대한 정리
+### 필요한 라이브러리에 대한 정리
 
 !! 세팅환경에 맞는 installation 사용해주세요.<br />
 !! 개발환경에만 필요한 모듈들 즉 devDependencies 넣을 모듈들은 -D로 사전표기할게요.<br />
@@ -79,8 +79,23 @@
   yarn add -D webpack-bundle-analyzer
 ```
 
-<br />
-1. root element가 있는 src/index.html 작성
-2. declarion.d.ts img/svg 모듈에 대한 전역 타입 지정
-3. webpack 컴파일러 단계별 분리 dev,pr,common // (build test) cd build npx serve 기대되는 프로덕트 파일 테스트가능 // prod 와 dev 의 번들파일크기 차이 확인가능
-4.  13. 코드규칙에 대한 설정역시 pakage.json "lint", "format" 빌드명령어로 각각 eslint,prettier 모듈로 접근해 수정경로를 설정후 전체적인 검사 및 수정을 일괄적으로 할수있다.
+### 프로젝트 세팅 Tip
+
+1. 모든요소의 Root가 되는 폴더를 하나 만들어주세요.
+2. npm init -y 를 입력하셔서 새로운 npm 패키지를 설정하는 package.json파일을 일단 전부 enter로 스킵하시고 만들어주세요.
+3. Root폴더 바로 아래에 src 폴더와 build 폴더를 생성해줄게요.
+4. src/index.html을 만들어서 !+tab을 통한 기본 html 양식과 body태그 바로아래 id가 root인 div를 하나 만들어줍니다.
+5. index.html 과 같은 선상의 경로에 App.tsx를 하나만들게요, 뷰에 보여지고 싶은 내용을 입력해주세요.
+6. App.tsx와 같은 선상의 경로에 index.tsx 파일을 만들고 아래와 같이 작성합니다. 작성코드를 보면 id가 root인 element아래 reactdom의 render함수를
+   이용해 App컴포넌트를 넣어줍니다.
+
+```
+import ReactDOM from 'react-dom';
+import { App } from './App';
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+7. root element가 있는 src/index.html 작성
+8. declarion.d.ts img/svg 모듈에 대한 전역 타입 지정
+9. webpack 컴파일러 단계별 분리 dev,pr,common // (build test) cd build npx serve 기대되는 프로덕트 파일 테스트가능 // prod 와 dev 의 번들파일크기 차이 확인가능
+10. 13. 코드규칙에 대한 설정역시 pakage.json "lint", "format" 빌드명령어로 각각 eslint,prettier 모듈로 접근해 수정경로를 설정후 전체적인 검사 및 수정을 일괄적으로 할수있다.
