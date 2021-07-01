@@ -1,12 +1,25 @@
-### boilerplate
+# Typescript & React Quick Boilerplate
 
---- 순서도
+#### Author : FeDev.황상한
 
+<br />
 1. root element가 있는 src/index.html 작성
 
-2. yarn add react react-dom 리액트 라이브러리 설치
+### 모듈설치에 대한 정리
 
-3. yarn add -D typescript @types/react @types/react-dom .. devDependencies 타입스크립트와 react types모듈들을 설치
+!! 세팅환경에 맞게 npm i or yarn add를 사용해주세요.<br />
+!! 개발환경에만 필요한 모듈들 즉 devDependencies 넣을 모듈들은 -D <br />
+
+- (리액트 코어 라이브러리들을 설치)
+
+```
+yarn add react react-dom
+```
+
+- -D typescript @types/react @types/react-dom (타입스크립트와 리액트 타입들을 설치)<br />
+- -D @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescrip (jsx/tsx 등 비자바스크립트 소스들을 JS로 컴파일 해주는
+  바벨 플러그인을 서치) <br />
+-
 
 4. yarn add -D @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript ... jsx , tsx 등 기타 문법들을 js로 컴파일해주는 바벨 플러그인 설치
 
@@ -31,6 +44,6 @@
 
 14. yarn add -D husky lint-staged 허스키와 lint-staged 사용하면 git hooks를 사용할수있다. 커밋전에 eslint 문법 체크를 통한 점검을 하며 코드정밀화에 도움을 준다.
 
-15. yarn add -D @babel/runtime @babel/plugin-transform-runtime
+15. yarn add -D @babel/runtime @babel/plugin-transform-runtime... 전역 babel-polyfill 중 필요한 헬퍼 함수들을 build 하려는 js 코드 내로 포함시켜 babel-polyfill 의 이중 호출 에러를 잡을 수 있다.
 
 16. yarn add -D webpack-bundle-analyzer
