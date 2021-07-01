@@ -96,11 +96,29 @@ ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
 7. 이제 작성한 App을 보기위해서는 웹서버를 구동해야됩니다. 우리모두 컴퓨터 전역으로 이미 노드를 설치했기때문에
-   그 거대한 노드안에 있는 객체속에서 우리 Root속 pakage.json이라는 리모컨을 통해 작은 웹서버로 우리의 작업물을 보게됩니다.
-   srcipt option중 "start"를 이용해 우리의 작은 웹서버를 켜보도록 해보죠.
+   그 거대한 노드안에 있는 모듈 덩어리 속에서 우리 Root속 pakage.json이라는 리모컨을 통해 작은 웹서버를 기능을 선택해 우리의 작업물을 보게됩니다.
+   script option중 "start"를 이용해 우리의 작은 웹서버를 켜보도록 해보죠.
+8. package.json과 같은 선상의 경로에 webpack이라는 폴더를 만들고 webpack/webpack.config.js를 생성합니다.
+9. webpack.config.js 자체를 모듈로써 common하게 사용할 것이기 떄문 module.export로 이제 웹팩 설정 옵션들을 작성하겠습니다.
+   (이하 내용은 webpack.common.js 참고)
+10. 이제 기본적인 웹팩 설정을 마쳤다면, 개발환경 과 사용자가 서비스를 이용할 산출물을 분리해주어야 겠죠.
+    (즉, 미리보자면 우리든 "start" 명령어로 dev서버를 열것이며 "build" 명령어로 사용자가 이용할 프로젝트를 만들어 낼것입니다.)
+11. 동일한 webpack 폴더내 webpack.dev.js 와 webpack.prod.js 따로 작성해주어 dev,production의 옵션에 차이를 줄 것입니다.
+    (이하 내용은 webpack.dev.js 와 webpack.prod.js 참고)
+12. 위 과정까지 하셨다면 공통적으로 사용하는 webpack.common.js를 바탕으로 webpack.config.js를 통해 개발서버와 실산출물을 만드는 작용을 분리시켜줍니다.
+    (이하 내용은 webpack.config.js 참고)
+13. 드디어 빌드를 시작할 준비를 끝마쳤습니다. package.json을 확인해볼까요
 
-8.
-9. root element가 있는 src/index.html 작성
-10. declarion.d.ts img/svg 모듈에 대한 전역 타입 지정
-11. webpack 컴파일러 단계별 분리 dev,pr,common // (build test) cd build npx serve 기대되는 프로덕트 파일 테스트가능 // prod 와 dev 의 번들파일크기 차이 확인가능
-12. 13. 코드규칙에 대한 설정역시 pakage.json "lint", "format" 빌드명령어로 각각 eslint,prettier 모듈로 접근해 수정경로를 설정후 전체적인 검사 및 수정을 일괄적으로 할수있다.
+```
+    "scripts": {
+      "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
+      // 약속된 start 명령어로 우리는 미리 설치한 webpack 모듈을 실행시키고 serve를 통해 개발환경이라는 걸 명시한후
+      // 같은 경로에 있는 webpack폴더에 접근해서 webpack.config.js에 접근합니다. 그중 env를 dev를 줌으로 이전에 분기를 시켜놓은 작용으로
+      // webpack.common.js를 바탕으로한 webpack.dev.js를 실행시켜 개발환경으로 세팅한 webpack dev 환경을 실행시킵니다.
+      "build": "webpack --config webpack/webpack.config.js --env env=prod",
+      // 위와 내용은 같으며 prod를 산출해내며 미리 설정해놓은 analyzer을 통한 빌드환경 분석 화면을 show합니다.
+       .....
+    },
+```
+
+<br /> 이후는 리액트 개발 환경세팅을..

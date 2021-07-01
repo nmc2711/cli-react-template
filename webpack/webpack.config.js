@@ -5,6 +5,7 @@ const { merge } = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
 
 module.exports = (envVars) => {
+  // envVars는 pakage.json을 통해 입력되는 명령어에따른 실행할 config파일을 고릅니다.(package.json 확인!)
   const { env } = envVars;
   const envConfig = require(`./webpack.${env}.js`);
   // pk에서 env의 서치값으로 배포 로케이션 지정
