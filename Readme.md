@@ -7,31 +7,40 @@
 
 ### 모듈설치에 대한 정리
 
-!! 세팅환경에 맞게 npm i or yarn add를 사용해주세요.<br />
-!! 개발환경에만 필요한 모듈들 즉 devDependencies 넣을 모듈들은 -D <br />
+!! 세팅환경에 맞는 installation 사용해주세요.<br />
+!! 개발환경에만 필요한 모듈들 즉 devDependencies 넣을 모듈들은 -D로 사전표기할게요.<br />
 
 - (리액트 코어 라이브러리들을 설치)
 
 ```
-yarn add react react-dom
+  yarn add react react-dom
 ```
 
-- -D typescript @types/react @types/react-dom (타입스크립트와 리액트 타입들을 설치)<br />
-- -D @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescrip (jsx/tsx 등 비자바스크립트 소스들을 JS로 컴파일 해주는
-  바벨 플러그인을 서치) <br />
--
+- (타입스크립트와 리액트 타입들을 설치)
 
-4. yarn add -D @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript ... jsx , tsx 등 기타 문법들을 js로 컴파일해주는 바벨 플러그인 설치
+```
+  yarn add -D typescript @types/react @types/react-dom
+```
 
-5. yarn add -D webpack webpack-cli webpack-dev-server html-webpack-plugin ... code build tool webpack plugin 설치
+- (jsx/tsx 등 비자바스크립트 소스들을 JS로 컴파일 해주는 babel 플러그인을 설치)
 
-6. yarn add -D babel-loader ... 비 자바스크립트 파일을 웹팩이 이해하게끔 변경해야하는데 로더가 그런 역할
+```
+  yarn add -D @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript
+```
 
-7. yarn add -D css-loader style-loader ... 비 자바스크립트 파일중 css/style을 컴파일하는 로더 설치
+- (필요한 다수의 자바스크립트 파일을 하나의 자바 스크립트 파일로 만들어 주는 것 Webpack설치)
 
-8. declarion.d.ts img/svg 모듈에 대한 전역 타입 지정
+```
+  yarn add -D webpack webpack-cli webpack-dev-server html-webpack-plugin
+```
 
-9. webpack 컴파일러 단계별 분리 dev,pr,common // (build test) cd build npx serve 기대되는 프로덕트 파일 테스트가능 // prod 와 dev 의 번들파일크기 차이 확인가능
+6.  yarn add -D babel-loader ... 비 자바스크립트 파일을 웹팩이 이해하게끔 변경해야하는데 로더가 그런 역할
+
+7.  yarn add -D css-loader style-loader ... 비 자바스크립트 파일중 css/style을 컴파일하는 로더 설치
+
+8.  declarion.d.ts img/svg 모듈에 대한 전역 타입 지정
+
+9.  webpack 컴파일러 단계별 분리 dev,pr,common // (build test) cd build npx serve 기대되는 프로덕트 파일 테스트가능 // prod 와 dev 의 번들파일크기 차이 확인가능
 
 10. yarn add -D @pmmmwh/react-refresh-webpack-plugin react-refresh ... 개발중인 프로덕트에 대한 코드동기변화에도 현재 react 스테이트 유지를 도와주는 helper
 
