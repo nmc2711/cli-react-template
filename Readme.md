@@ -2,9 +2,6 @@
 
 #### Author : FeDev.황상한
 
-<br />
-1. root element가 있는 src/index.html 작성
-
 ### 모듈설치에 대한 정리
 
 !! 세팅환경에 맞는 installation 사용해주세요.<br />
@@ -34,25 +31,56 @@
   yarn add -D webpack webpack-cli webpack-dev-server html-webpack-plugin
 ```
 
-6.  yarn add -D babel-loader ... 비 자바스크립트 파일을 웹팩이 이해하게끔 변경해야하는데 로더가 그런 역할
+- (webpack 을 통해 번들시점에 바벨로더로 비자바스크립트 파일을 컴파일 도와주는 것)
 
-7.  yarn add -D css-loader style-loader ... 비 자바스크립트 파일중 css/style을 컴파일하는 로더 설치
+```
+  yarn add -D babel-loader
+```
 
-8.  declarion.d.ts img/svg 모듈에 대한 전역 타입 지정
+- (비 자바스크립트 파일중 css/style을 컴파일하는 로더 설치)
 
-9.  webpack 컴파일러 단계별 분리 dev,pr,common // (build test) cd build npx serve 기대되는 프로덕트 파일 테스트가능 // prod 와 dev 의 번들파일크기 차이 확인가능
+```
+   yarn add -D css-loader style-loader
+```
 
-10. yarn add -D @pmmmwh/react-refresh-webpack-plugin react-refresh ... 개발중인 프로덕트에 대한 코드동기변화에도 현재 react 스테이트 유지를 도와주는 helper
+- (개발중인 프로덕트에 대한 코드 변화에도 현재 React 상태변화 유지를 도와주는 helper 설치)
 
-11. yarn add -D eslint eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/parser @typescript-eslint/eslint-plugin ...협업간 코드규칙에 대한 공통화와 정밀화를 위해 eslint를 통한 엄격한 검사시스템 구축 이와 같은 플러그인 설치와 eslintrc작성 사용자설정에 따른 vscode setting eslint를 활성화 해준다.
+```
+  yarn add -D @pmmmwh/react-refresh-webpack-plugin react-refresh
+```
 
-12. yarn add -D prettier eslint-plugin-prettier eslint-config-prettier 또한 pettier를 eslint위에 얹어 자동 포매팅을 통한 코드정리 효과를 넣자.
-    이것역시 필요한 옵션을 prettierrc를 작성해 커스터마이징 할수있다.
+- (협업간 코드규칙에 대한 통일성 위해 eslint를 통한 엄격한 검사시스템 구축)
 
-13. 코드규칙에 대한 설정역시 pakage.json "lint", "format" 빌드명령어로 각각 eslint,prettier 모듈로 접근해 수정경로를 설정후 전체적인 검사 및 수정을 일괄적으로 할수있다.
+```
+  yarn add -D eslint eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/parser @typescript-eslint/eslint-plugin
+```
 
-14. yarn add -D husky lint-staged 허스키와 lint-staged 사용하면 git hooks를 사용할수있다. 커밋전에 eslint 문법 체크를 통한 점검을 하며 코드정밀화에 도움을 준다.
+- (eslint 설정에 맞춘 pettier로 코드 포맷팅 및 클리너 설치)
 
-15. yarn add -D @babel/runtime @babel/plugin-transform-runtime... 전역 babel-polyfill 중 필요한 헬퍼 함수들을 build 하려는 js 코드 내로 포함시켜 babel-polyfill 의 이중 호출 에러를 잡을 수 있다.
+```
+  yarn add -D prettier eslint-plugin-prettier eslint-config-prettier
+```
 
-16. yarn add -D webpack-bundle-analyzer
+- (husky를 git-hooks사용과 git에 대한 액션 진행시 eslint 문법 검사를 통한 사전오류 및 워닝 방지)
+
+```
+  yarn add -D husky lint-staged
+```
+
+- (전역 polyfill 모듈중 필요한 헬퍼 함수들을 build 하려는 js코드 내로 포함시캬 polyfill 이중 호출 에러 감지)
+
+```
+  yarn add -D @babel/runtime @babel/plugin-transform-runtime
+```
+
+- (build단계에서 webpack으로 번들되는 파일의 용량 크기 및 처리순서들을 시각화로 보여줄수있는 webpack-bundle-analyzer 설치)
+
+```
+  yarn add -D webpack-bundle-analyzer
+```
+
+<br />
+1. root element가 있는 src/index.html 작성
+2. declarion.d.ts img/svg 모듈에 대한 전역 타입 지정
+3. webpack 컴파일러 단계별 분리 dev,pr,common // (build test) cd build npx serve 기대되는 프로덕트 파일 테스트가능 // prod 와 dev 의 번들파일크기 차이 확인가능
+4.  13. 코드규칙에 대한 설정역시 pakage.json "lint", "format" 빌드명령어로 각각 eslint,prettier 모듈로 접근해 수정경로를 설정후 전체적인 검사 및 수정을 일괄적으로 할수있다.
