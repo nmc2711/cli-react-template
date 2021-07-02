@@ -85,6 +85,7 @@
   그 이유는 mini-css-extract-plugin 플러그인은 JavaScript 파일 안에서 호출되는 스타일 코드를 청크에서 파일로 추출하므로 개발 중에는
   플러그인을 사용하지 않는 것이 좋습니다. 즉, 개발이 끝난 후 배포 할 때 사용하면 좋습니다.
   개발 모드에서는 CSS를 여러 번 수정하고 DOM에 <style> 요소의 코드로 주입하는 것이 훨씬 빨리 작동하므로 "style-loader"를 사용하고, 배포 모드에서는 MiniCssExtractPlugin 하여 스타일 폴더를 생성하여 변환된 scss를 css형태로 사용합니다.
+  (이하 webpack.common.js 와 webpack.prod.js 참고)
 
 ```
   yarn add -D sass sass-loader mini-css-extract-plugin
