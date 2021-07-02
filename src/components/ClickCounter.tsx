@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './count.scss';
+
 export const ClickCounter = () => {
   const [count, setCount] = useState(0);
   return (
