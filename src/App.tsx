@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './style.css';
+import './style.scss';
 import BasicImg from './basic-image.png';
 import LogoSvg from './logo.svg';
 import { ClickCounter } from './components/ClickCounter';

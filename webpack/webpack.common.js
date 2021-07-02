@@ -24,8 +24,9 @@ module.exports = {
         // * use 해당 파일에 적용할 로더의 이름
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        // * README에서 설명드린거와 같이 작업을 하며 스타일을 수시로 바꿀수있는 상황에는 style-loader를 이용하여 scss를 컴파일해서 사용합니다.
+        test: /\.s[ac]ss$/i,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
