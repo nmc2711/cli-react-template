@@ -147,4 +147,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
     },
 ```
 
-<br /> 이후는 리액트 개발 환경세팅을..
+<br />
+ps. https://hsh-yesreact-boilerplate.netlify.app/ 배포테스트를 위해 netlify에 후딱 올려봤씁니다. (이때 analyzer를 꺼야합니다 ㅠㅠ)
+
+<br /> 이후는 aws배포와 클라이언트 내부에서 커먼세팅을 해보려고합니다.
