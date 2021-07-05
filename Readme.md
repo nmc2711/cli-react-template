@@ -91,6 +91,12 @@
   yarn add -D sass sass-loader mini-css-extract-plugin
 ```
 
+- 전역 상태관리 세팅으로는 redux rematch-core 와 context api를 다뤄 볼것이다.
+
+```
+  yarn add redux react-redux rematch/core
+```
+
 ### 프로젝트 세팅 Tip
 
 1. 모든요소의 Root가 되는 폴더를 하나 만들어주세요.
