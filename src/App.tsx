@@ -6,6 +6,8 @@ import { ClickCounter } from './components/ClickCounter';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, Dispatch } from './store';
 
+import styled from 'styled-components';
+
 export const App = () => {
   const { name, age } = useSelector(({ user }: RootState) => user);
   const dispatch = useDispatch<Dispatch>();
@@ -19,9 +21,9 @@ export const App = () => {
         환경 - {process.env.NODE_ENV} {process.env.name} <br />
         리덕스 테스트 이름: {name}
         <br />
-        <button onClick={() => dispatch.user.setState({ age: age + 1 })}>
+        <ClickBtn onClick={() => dispatch.user.setState({ age: age + 1 })}>
           나이증가
-        </button>
+        </ClickBtn>
         리덕스 테스트 나이: {age}
         <br />
       </h1>
@@ -31,3 +33,7 @@ export const App = () => {
     </>
   );
 };
+
+const ClickBtn = styled.button`
+  background-color: ${({ theme }) => theme.color.primary};
+`;
