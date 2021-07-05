@@ -91,10 +91,19 @@
   yarn add -D sass sass-loader mini-css-extract-plugin
 ```
 
-- 전역 상태관리 세팅으로는 redux rematch-core 와 context api를 다뤄 볼것이다.
+- 전역 상태관리 세팅으로는 redux @rematch-core 와 context api를 다뤄 볼것입니다.
+  thunk없이 effect function관리 통합 state,reducer,actions관리를 할 수있습니다. tookit과 비슷하다고 할 수 있습니다.
 
 ```
-  yarn add redux react-redux rematch/core
+  yarn add redux react-redux @rematch/core
+```
+
+- theme 와 golbalstyle 지정해봅시다. 자주 상요하며 키워드가 될수있는 style에대한 공통적인 부분을 theme로 선언하고,
+  globalstyle 안에 reset 설정과 nomalize를 통해 다른 브라우저에 상이할 수 있는부분을 머지 시킵니다.
+  root index.tsx에서 가져와 사용합니다.
+
+```
+  yarn add styled-components styled-normalize
 ```
 
 ### 프로젝트 세팅 Tip
@@ -154,6 +163,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
 <br />
-ps. https://hsh-yesreact-boilerplate.netlify.app/ 배포테스트를 위해 netlify에 후딱 올려봤씁니다. (이때 analyzer를 꺼야합니다 ㅠㅠ)
+ps. https://hsh-yesreact-boilerplate.netlify.app/ <br />
+배포테스트를 위해 netlify에 후딱 올려봤씁니다. (이때 analyzer를 꺼야합니다 ㅠㅠ)
 
 <br /> 이후는 aws배포와 클라이언트 내부에서 커먼세팅을 해보려고합니다.

@@ -4,8 +4,7 @@ import { normalize } from 'styled-normalize';
 // 위에서 받은 `normalize`로 기본 css가 초기화 합니다.
 const GlobalStyle = createGlobalStyle`
   ${normalize}
-
-  * {
+* {
   margin: 0;
   padding: 0;
   border: 0;
@@ -222,11 +221,10 @@ input::-ms-clear {
 }
 
 /* 크롬 인풋 자동완성 배경 컬러 설정 */
-input:-webkit-autofill,
+/* input:-webkit-autofill,
 input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 50px white inset;
-}
-
+} */
 address,
 caption,
 em {
